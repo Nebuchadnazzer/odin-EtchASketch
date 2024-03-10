@@ -1,0 +1,14 @@
+.pixel-div {
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+}
+
+.row {
+    display: flex;
+}
+
+.pixel-container {
+    display :flex;
+    flex-wrap: wrap;
+}
