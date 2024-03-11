@@ -33,3 +33,15 @@ for (let i = 0; i < divRows; i++) {
         rowDiv.appendChild(pixelDiv);
     }
 }
+
+// const pixelDivs = document.querySelectorAll('.pixel-div');
+
+// pixelDivs.forEach(pixelDiv => {
+//     pixelDiv.addEventListener('mouseenter', () => {
+//         pixelDiv.classList.add('active');
+//     });
+
+//     pixelDiv.addEventListener('mouseleave', () => {
+//         pixelDiv.classList.remove('active');
+//     });
+// });

@@ -2,6 +2,11 @@
     width: 5vw;
     height: 5vw;
     border: 1px solid black;
+    transition: background-color 0.3s ease;
+}
+
+.pixel-div:hover {
+    background-color: lightgray;
 }
 
 .row {
@@ -9,6 +14,6 @@
 }
 
 .pixel-container {
-    display :flex;
+    display: flex;
     flex-wrap: wrap;
 }
