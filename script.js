@@ -1,3 +1,11 @@
+let divRows = 16;
+let divColumns = 16;
+let pixelSize = 20;
+let divGridContainer;
+let redValue;
+let greenValue;
+let blueValue;
+
 // Create a button asking for grid size
 const popUpButton = document.createElement('button');
 popUpButton.classList.add('pop-up-button');
@@ -9,20 +17,12 @@ function checkGridSize(gridSize) {
     return gridSize <= 100 ? gridSize : handleClick();
 }
 
-let divRows = 0;
-let divColumns = 0;
-let pixelSize = 20;
-let divGridContainer;
-let redValue;
-let greenValue;
-let blueValue;
-
 function getArrGiiBeeValues () {
     const value = Math.floor(Math.random() * 256);
     return value
 }
 
-// Hover effect
+// Hover effect plus more FPS
 function applyHoverEffect(element) {
     element.addEventListener('mouseenter', () => {
         redValue = getArrGiiBeeValues();
@@ -78,5 +78,3 @@ function handleClick() {
 }
 
 popUpButton.addEventListener('click', handleClick);
-
-// Stacking effect
