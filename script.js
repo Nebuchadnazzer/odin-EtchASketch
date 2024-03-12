@@ -1,7 +1,7 @@
 // Create a button asking for grid size
 const popUpButton = document.createElement('button');
 popUpButton.classList.add('pop-up-button');
-popUpButton.textContent = "grid size";
+popUpButton.textContent = "enter grid size";
 document.body.prepend(popUpButton);
 
 // Checks user input if greater than 100
@@ -11,7 +11,18 @@ function checkGridSize(gridSize) {
 
 let divRows = 0;
 let divColumns = 0;
+let pixelSize = 20;
 let divGridContainer;
+
+// Hover effect
+function applyHoverEffect(element) {
+    element.addEventListener('mouseenter', () => {
+        element.style.backgroundColor = 'lightgray';
+    });
+    element.addEventListener('mouseleave', () => {
+        element.style.backgroundColor = '';
+    });
+}
 
 function handleClick() {
     const gridSize = Number(window.prompt("Enter grid size (maximum of 100): "));
@@ -24,13 +35,12 @@ function handleClick() {
         document.body.removeChild(divGridContainer)
     }
 
-    // Create a container div
+    // Create grid container
     divGridContainer = document.createElement('div');
     divGridContainer.classList.add('pixel-container');
     document.body.appendChild(divGridContainer);
 
     // Calculate the total width needed for the grid
-    const pixelSize = 20;
     const totalWidth = divColumns * pixelSize;
     divGridContainer.style.width = `${totalWidth}px`;
 
@@ -49,6 +59,23 @@ function handleClick() {
             rowDiv.appendChild(pixelDiv);
         }
     }
+    // Apply hover effect through javascript
+    const pixelDivs = document.querySelectorAll('.pixel-div');
+    pixelDivs.forEach(pixelDiv => {
+        applyHoverEffect(pixelDiv);
+    });
 }
 
 popUpButton.addEventListener('click', handleClick);
+
+// Randomize RGB off hover
+// Add hover effect
+// const pixelDivs = document.querySelectorAll('.pixel-div');
+// pixelDivs.forEach (pixelDiv => {
+//     pixelDivs.addEventListener ('mouseenter', () => {
+//         pixelDiv.style.backgroundcolor = 'blue';
+//     });
+//     pixelDivs.addEventListener ('mouseleave', () => {
+//         pixelDiv.style.backgroundcolor = '';
+//     });
+// })

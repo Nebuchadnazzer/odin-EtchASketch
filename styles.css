@@ -5,10 +5,6 @@
     transition: background-color 0.3s ease;
 }
 
-.pixel-div:hover {
-    background-color: lightgray;
-}
-
 .row {
     display: flex;
 }
@@ -25,7 +21,11 @@
     font-size: 16px;
     border: none;
     cursor: pointer;
-    background-color: grey;
+    background-color:  #003366;
     color: white;
     border-radius: 5px;
+}
+
+.pop-up-button:hover {
+    background-color: rgba(0, 58, 102, 0.912);
 }
