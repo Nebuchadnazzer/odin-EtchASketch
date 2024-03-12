@@ -11,6 +11,7 @@ function checkGridSize(gridSize) {
 
 let divRows = 0;
 let divColumns = 0;
+let divGridContainer;
 
 function handleClick() {
     const gridSize = Number(window.prompt("Enter grid size (maximum of 100): "));
@@ -18,8 +19,13 @@ function handleClick() {
     divRows = gridSize;
     divColumns = gridSize;
 
+    // Remove existing grid container
+    if (divGridContainer) {
+        document.body.removeChild(divGridContainer)
+    }
+
     // Create a container div
-    const divGridContainer = document.createElement('div');
+    divGridContainer = document.createElement('div');
     divGridContainer.classList.add('pixel-container');
     document.body.appendChild(divGridContainer);
 
