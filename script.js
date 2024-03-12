@@ -13,11 +13,22 @@ let divRows = 0;
 let divColumns = 0;
 let pixelSize = 20;
 let divGridContainer;
+let redValue;
+let greenValue;
+let blueValue;
+
+function getArrGiiBeeValues () {
+    const value = Math.floor(Math.random() * 256);
+    return value
+}
 
 // Hover effect
 function applyHoverEffect(element) {
     element.addEventListener('mouseenter', () => {
-        element.style.backgroundColor = 'lightgray';
+        redValue = getArrGiiBeeValues();
+        greenValue = getArrGiiBeeValues();
+        blueValue = getArrGiiBeeValues();
+        element.style.backgroundColor = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
     });
     element.addEventListener('mouseleave', () => {
         element.style.backgroundColor = '';
@@ -68,14 +79,4 @@ function handleClick() {
 
 popUpButton.addEventListener('click', handleClick);
 
-// Randomize RGB off hover
-// Add hover effect
-// const pixelDivs = document.querySelectorAll('.pixel-div');
-// pixelDivs.forEach (pixelDiv => {
-//     pixelDivs.addEventListener ('mouseenter', () => {
-//         pixelDiv.style.backgroundcolor = 'blue';
-//     });
-//     pixelDivs.addEventListener ('mouseleave', () => {
-//         pixelDiv.style.backgroundcolor = '';
-//     });
-// })
+// Stacking effect
